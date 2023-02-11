@@ -26,7 +26,7 @@ router.get("/:id", (req, res) => {
   pool.query(queryText, [req.params.id])
     .then(result => {
       console.log("successfully got data for specific movie at id:", req.params.id);
-      res.send(result.rows);
+      res.send(result.rows[0]);
     })
     .catch(err => {
       console.log('ERROR: Get all movies', err);

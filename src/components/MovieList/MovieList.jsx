@@ -12,14 +12,14 @@ function MovieList() {
 		dispatch({ type: "FETCH_MOVIES" });
 	}, []);
 
-	function goToDetails(movie) {
-		console.log("in goToDetails for movie at id:", movie.id);
-		history.push(`/details/${movie.id}`);
-		dispatch({
-			type: "FETCH_MOVIE_DETAILS",
-			payload: movie,
-		});
-	}
+	// function goToDetails(movie) {
+	// 	console.log("in goToDetails for movie at id:", movie.id);
+	// 	history.push(`/details/${movie.id}`);
+	// 	dispatch({
+	// 		type: "FETCH_MOVIE_DETAILS",
+	// 		payload: movie,
+	// 	});
+	// }
 
 	return (
 		<main>
@@ -32,7 +32,13 @@ function MovieList() {
 							<img
 								src={movie.poster}
 								alt={movie.title}
-								onClick={() => goToDetails(movie.id)}
+								onClick={() => {
+									dispatch({
+										type: "FETCH_MOVIE_DETAILS",
+										payload: { id: movie.id },
+									});
+									history.push(`/details/${movie.id}`);
+								}}
 							/>
 						</div>
 					);
