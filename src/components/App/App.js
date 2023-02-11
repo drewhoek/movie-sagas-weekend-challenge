@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <h1>The Movies Saga!</h1>
       <Router>
-        <nav><Link to="/">Home</Link> <Link to="/details">Details</Link></nav>
+        <nav><Link to="/">Home</Link></nav>
         <Route path="/" exact>
           <MovieList />
         </Route>
