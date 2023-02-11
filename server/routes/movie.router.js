@@ -23,9 +23,9 @@ router.get("/:id", (req, res) => {
   JOIN "genres" ON "movies_genres"."genre_id" = "genres"."id"
   WHERE "movies"."id" = $1
   GROUP BY "title", "poster", "description"`;
-  pool.query(queryText, [id])
+  pool.query(queryText, [req.params.id])
     .then(result => {
-      console.log("successfully got data for specific movie at id:", id);
+      console.log("successfully got data for specific movie at id:", req.params.id);
       res.send(result.rows);
     })
     .catch(err => {

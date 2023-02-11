@@ -12,9 +12,13 @@ function MovieList() {
 		dispatch({ type: "FETCH_MOVIES" });
 	}, []);
 
-	function goToDetails(id) {
-		console.log("in goToDetails for movie at id:", id);
-		history.push(`/details/${id}`);
+	function goToDetails(movie) {
+		console.log("in goToDetails for movie at id:", movie.id);
+		history.push(`/details/${movie.id}`);
+		dispatch({
+			type: "FETCH_MOVIE_DETAILS",
+			payload: movie,
+		});
 	}
 
 	return (
