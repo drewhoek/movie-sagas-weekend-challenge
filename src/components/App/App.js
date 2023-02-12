@@ -2,6 +2,10 @@ import { HashRouter as Router, Link, Route } from 'react-router-dom';
 import './App.css';
 import MovieList from '../MovieList/MovieList';
 import MovieDetails from '../MovieDetails/MovieDetails';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 function App() {
 
@@ -17,8 +21,6 @@ function App() {
         <Route path="/details/:id">
           <MovieDetails />
         </Route>
-
-        {/* Add Movie page */}
       </Router>
     </div>
   );
