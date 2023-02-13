@@ -37,6 +37,8 @@ function MovieList() {
 								src={movie.poster}
 								alt={movie.title}
 								onClick={() => {
+									// on click dispatch to movie details saga and push to
+									// movie's details page
 									dispatch({
 										type: "FETCH_MOVIE_DETAILS",
 										payload: { id: movie.id },
