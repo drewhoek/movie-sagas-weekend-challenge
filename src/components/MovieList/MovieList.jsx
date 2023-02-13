@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./MovieList.css";
 import { useHistory } from "react-router-dom";
-import { Typography } from "@material-ui/core";
+import { Box, Paper, Typography } from "@material-ui/core";
 
 function MovieList() {
 	const dispatch = useDispatch();
@@ -18,11 +18,13 @@ function MovieList() {
 			<Typography variant="h2" component="h2">
 				MovieList
 			</Typography>
-			<section className="movies">
+			<Box className="moviesContainer">
 				{movies.map((movie) => {
 					return (
-						<div key={movie.id}>
-							<h3>{movie.title}</h3>
+						<Paper className="movies" key={movie.id} elevation={3}>
+							<Typography variant="h4" component="h3">
+								{movie.title}
+							</Typography>
 							<img
 								src={movie.poster}
 								alt={movie.title}
@@ -34,10 +36,10 @@ function MovieList() {
 									history.push(`/details/${movie.id}`);
 								}}
 							/>
-						</div>
+						</Paper>
 					);
 				})}
-			</section>
+			</Box>
 		</main>
 	);
 }

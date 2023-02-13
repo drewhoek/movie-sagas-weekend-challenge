@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Button, Typography } from "@material-ui/core";
+import { Button, Container, Typography } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-import { useState } from "react";
 export default function MovieDetails() {
 	const movieIdObject = useParams();
 	const history = useHistory();
@@ -15,11 +14,11 @@ export default function MovieDetails() {
 
 	if (movieDetails) {
 		return (
-			<>
+			<Container className="detail-page">
 				<Typography variant="h2" component="h3">
 					Movie Details
 				</Typography>
-				<section className="details">
+				<Container className="details">
 					<img className="details-poster" src={movieDetails.poster} />
 					<h3>{movieDetails.title}</h3>
 					<p>{movieDetails.description}</p>
@@ -32,7 +31,7 @@ export default function MovieDetails() {
 								<li key={index}>{genre}</li>
 							))}
 					</ul>
-				</section>
+				</Container>
 				<Button
 					className="home"
 					variant="contained"
@@ -42,7 +41,7 @@ export default function MovieDetails() {
 				>
 					Go Back Home
 				</Button>
-			</>
+			</Container>
 		);
 	}
 }
