@@ -21,7 +21,12 @@ function MovieList() {
 			<Box className="moviesContainer">
 				{movies.map((movie) => {
 					return (
-						<Paper className="movies" key={movie.id} elevation={3}>
+						<Paper
+							className="movies"
+							key={movie.id}
+							elevation={3}
+							variant="outlined"
+						>
 							<Typography variant="h4" component="h3">
 								{movie.title}
 							</Typography>

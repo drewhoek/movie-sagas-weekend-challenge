@@ -9,6 +9,7 @@ import '@fontsource/roboto/700.css';
 import { Box, Typography } from '@material-ui/core';
 import { ThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
+import { AppBar, Toolbar } from '@mui/material';
 
 
 function App() {
@@ -17,7 +18,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Typography variant='h1' component="h1" className='header'>The Movies Saga!</Typography>
+        <AppBar position="fixed" >
+          <Toolbar className='header'>
+            <Typography variant='h1' component="h1" >The Movies Saga!</Typography>
+          </Toolbar>
+        </AppBar>
+        <Toolbar />
         <Box className='Main'>
           <Router>
             <Route path="/" exact>
