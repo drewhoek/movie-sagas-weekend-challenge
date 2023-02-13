@@ -10,17 +10,19 @@ import { Box, Typography } from '@material-ui/core';
 import { ThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { AppBar, Toolbar } from '@mui/material';
+import MovieIcon from '@mui/icons-material/Movie';
 
 
 function App() {
 
   const theme = createMuiTheme();
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
         <AppBar position="fixed" >
-          <Toolbar className='header'>
-            <Typography variant='h1' component="h1" >The Movies Saga!</Typography>
+          <Toolbar className='header' sx={{ display: "inline-block" }}>
+            <Typography variant='h1' component="h1"> <MovieIcon sx={{ fontSize: "6rem" }} />The Movies Saga!</Typography>
           </Toolbar>
         </AppBar>
         <Toolbar />

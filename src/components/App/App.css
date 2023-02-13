@@ -1,15 +1,14 @@
 .App {
   text-align: center;
-}
-
-.Main {
   background-image: url("../../../images/starry_sky_background.jpeg");
   background-size: cover;
 }
 
 .header {
   background-image: linear-gradient(to bottom right, #0a1e2c, #7F5A83);
-  color:rgb(156, 156, 156)
+  color:rgb(156, 156, 156);
+  display: flex;
+  align-items: baseline;
 }
 
 .moviesContainer {
@@ -29,8 +28,17 @@
   color: rgb(156, 156, 156) !important;
 }
 
+.detail-container {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 15px;
+}
+
 .detail-page {
   padding-bottom: 15px;
+  width: 80vw;
 }
 
 img {
@@ -38,4 +46,13 @@ img {
   width: 200px;
   height: 300px;
   cursor: pointer;
+}
+
+ul {
+  list-style-type:disc
+}
+
+li {
+  list-style: none;
+  list-style-position:initial;
 }
