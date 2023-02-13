@@ -6,14 +6,14 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import { Typography } from '@material-ui/core';
 
 function App() {
 
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
+      <Typography variant='h1' component="h1">The Movies Saga!</Typography>
       <Router>
-        <nav><Link to="/">Home</Link></nav>
         <Route path="/" exact>
           <MovieList />
         </Route>

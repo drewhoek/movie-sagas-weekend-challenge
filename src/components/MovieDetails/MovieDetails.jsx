@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Button } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 export default function MovieDetails() {
@@ -16,7 +16,9 @@ export default function MovieDetails() {
 	if (movieDetails) {
 		return (
 			<>
-				<h2>Movie Details</h2>
+				<Typography variant="h2" component="h3">
+					Movie Details
+				</Typography>
 				<section className="details">
 					<img className="details-poster" src={movieDetails.poster} />
 					<h3>{movieDetails.title}</h3>
