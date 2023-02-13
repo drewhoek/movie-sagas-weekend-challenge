@@ -7,8 +7,11 @@ import { Box, Paper, Typography } from "@material-ui/core";
 function MovieList() {
 	const dispatch = useDispatch();
 	const history = useHistory();
+
+	// Access store to grab all movies
 	const movies = useSelector((store) => store.movies);
 
+	// On component ready, render movie list
 	useEffect(() => {
 		dispatch({ type: "FETCH_MOVIES" });
 	}, []);

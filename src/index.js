@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App.js';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+
 // Provider allows us to use redux within our react app
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
+
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
@@ -17,8 +19,8 @@ function* rootSaga() {
     yield takeEvery('FETCH_MOVIE_DETAILS', fetchMovieDetails);
 }
 
+// get all movies from the DB
 function* fetchAllMovies() {
-    // get all movies from the DB
     try {
         const movies = yield axios.get('/api/movie');
         console.log('get all:', movies.data);
@@ -29,8 +31,8 @@ function* fetchAllMovies() {
     }
 }
 
+// get specific movie details from DB
 function* fetchMovieDetails(action) {
-    // get specific movie details from DB
     try {
         const movieDetails = yield axios.get(`/api/movie/${action.payload.id}`);
         console.log("this is our payload:", action.payload);
@@ -65,6 +67,7 @@ const genres = (state = [], action) => {
     }
 };
 
+// used to store specific movie details
 const movieDetails = (state = {}, action) => {
     switch (action.type) {
         case "SET_MOVIE_DETAILS":
