@@ -1,5 +1,13 @@
 import { useSelector } from "react-redux";
-import { Box, Button, Container, Paper, Typography } from "@material-ui/core";
+import {
+	Box,
+	Button,
+	Container,
+	List,
+	ListItem,
+	Paper,
+	Typography,
+} from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 
 export default function MovieDetails() {
@@ -22,15 +30,19 @@ export default function MovieDetails() {
 						{movieDetails.title}
 					</Typography>
 					<p>{movieDetails.description}</p>
-					<h4>Genres</h4>
-					<ul>
-						{movieDetails &&
-							movieDetails.jsonb_agg &&
-							Array.isArray(movieDetails.jsonb_agg) &&
-							movieDetails.jsonb_agg.map((genre, index) => (
-								<li key={index}>{genre}</li>
-							))}
-					</ul>
+					<Typography component="h2" variant="h4">
+						Genres
+					</Typography>
+					<Box className="list">
+						<List>
+							{movieDetails &&
+								movieDetails.jsonb_agg &&
+								Array.isArray(movieDetails.jsonb_agg) &&
+								movieDetails.jsonb_agg.map((genre, index) => (
+									<ListItem key={index}>{genre}</ListItem>
+								))}
+						</List>
+					</Box>
 				</Container>
 				<Button
 					className="home"

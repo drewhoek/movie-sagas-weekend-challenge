@@ -21,7 +21,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <AppBar position="fixed" >
-          <Toolbar className='header' sx={{ display: "inline-block" }}>
+          <Toolbar className='header' sx={{ display: "flex", alignItems: "center" }}>
             <Typography variant='h1' component="h1"> <MovieIcon sx={{ fontSize: "6rem" }} />The Movies Saga!</Typography>
           </Toolbar>
         </AppBar>
